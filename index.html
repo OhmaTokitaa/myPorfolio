@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rommelie (Lars) — QA Engineer • Portfolio</title>
+  <meta name="description" content="Eddy — Quality Assurance Engineer with strong testing expertise for both corporate and freelance work." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4;--glass:rgba(255,255,255,0.03);--upwork:#108A00}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:linear-gradient(180deg,#071029 0%, #071526 100%);color:#e6eef8;line-height:1.5;overflow-x:hidden}
+    nav{position:sticky;top:12px;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:980px;margin:16px auto;padding:8px 24px;background:transparent}
+    .nav-links{display:flex;gap:12px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;transition:background 0.2s ease,color 0.2s}
+    .nav-links a:hover{background:rgba(255,255,255,0.02);color:#fff}
+    .container{max-width:980px;margin:0 auto;padding:24px 24px 48px;animation:fadeIn 1s ease-in}
+    header{display:flex;align-items:center;gap:16px;animation:slideDown 0.8s ease-out}
+    .avatar{width:88px;height:88px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:22px}
+    .tagline{color:var(--muted);font-size:14px;margin-top:4px;min-height:22px}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);transition:transform 0.3s ease, box-shadow 0.3s ease;animation:fadeUp 1.2s ease forwards;opacity:0}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(2,6,23,0.7)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted);transition:background 0.3s ease}
+    .skill:hover{background:rgba(6,182,212,0.2);color:#fff}
+
+    .section-title{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;position:relative}
+    .section-title::after{content:'';position:absolute;bottom:-4px;left:0;width:40px;height:2px;background:var(--accent);border-radius:4px}
+
+    .projects{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .project:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(6,182,212,0.2)}
+
+    .reviews{display:flex;flex-direction:column;gap:10px}
+    .review{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:8px;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .review:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,182,212,0.2)}
+    .meta{display:flex;align-items:center;gap:8px}
+    .name{font-weight:600}
+    .stars{color:#ffd166;font-size:14px}
+
+    .what-clients{background:#f5f7fa;color:#072; padding:18px;border-radius:10px;margin-top:20px}
+    .what-clients p{color:#083; margin:8px 0}
+    .upwork-btn{background:var(--upwork);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;transition:transform 0.2s ease, box-shadow 0.2s}
+    .upwork-btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(16,138,0,0.18)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center;animation:fadeIn 1.5s ease-in}
+    .footer-actions{margin-top:10px}
+    .resume-btn{background:linear-gradient(90deg,var(--accent),#60a5fa);border:none;color:#012;font-weight:700;padding:10px 16px;border-radius:8px;cursor:pointer;transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;display:inline-block}
+    .resume-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(6,182,212,0.4)}
+
+    .contact-form{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+    input,textarea,button{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;transition:border-color 0.3s ease,box-shadow 0.3s ease}
+    input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 4px var(--accent);outline:none}
+    button{background:linear-gradient(90deg,var(--accent),#60a5fa);border:none;color:#012;font-weight:700;cursor:pointer;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    button:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(6,182,212,0.4)}
+
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @keyframes fadeUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.nav-links{display:none}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div style="font-weight:700;color:#fff">Lars — QA Engineer</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#clients">What Clients Say</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header id="about">
+      <div class="avatar">E</div>
+      <div>
+        <h1>Lars — Quality Assurance Engineer</h1>
+        <p class="tagline" id="typewriter"></p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="section-title">Profile Summary</div>
+          <p>I'm a Quality Assurance Engineer experienced in manual and automation testing for both corporate and freelance projects. I focus on building reliable, high-quality applications through well-structured testing and collaboration with development teams.</p>
+
+          <div style="margin-top:12px">
+            <div class="section-title">Core Expertise</div>
+            <ul style="margin:0 0 0 18px;color:var(--muted)">
+              <li>Manual Testing: Functional, regression, and exploratory</li>
+              <li>Automation Testing: Playwright & Selenium</li>
+              <li>API Testing: Postman, REST validation</li>
+              <li>UI Validation: Figma design comparison, cross-browser testing</li>
+              <li>Documentation: Test plans, cases, and closure reports</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="section-title">Skills & Tools</div>
+            <div class="skills">
+              <span class="skill">Manual Testing</span>
+              <span class="skill">Playwright</span>
+              <span class="skill">Selenium</span>
+              <span class="skill">Postman</span>
+              <span class="skill">Jira</span>
+              <span class="skill">GitHub</span>
+              <span class="skill">Figma Validation</span>
+              <span class="skill">Agile / Scrum</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="portfolio" style="margin-top:16px">
+          <div class="section-title">Portfolio Highlights</div>
+          <div class="projects">
+            <div class="project">
+              <strong>Voicebot Web App — QA</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Performed end-to-end test plan, validated privacy & legal pages against designs, executed regression and smoke tests prior to release.</div>
+            </div>
+            <div class="project">
+              <strong>Sales Platform — Regression & Automation</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Built regression checklist and automated critical smoke tests using Playwright. Reduced release regression time significantly.</div>
+            </div>
+            <div class="project">
+              <strong>Mobile Checkout Flow — Exploratory Testing</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Found payment and session edge-cases and provided clear reproduction steps and patches.</div>
+            </div>
+            <div class="project">
+              <strong>Privacy Policy Validation</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:6px">Compared legal text to design files and flagged placeholders & third-party references for legal review.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <div class="section-title">Professional Experience</div>
+          <div class="project">
+            <strong>Corporate QA Engineer</strong>
+            <div style="font-size:13px;color:var(--muted);margin-top:6px">Executed manual and automated tests for multiple software projects. Coordinated with developers and product managers in Agile sprints to ensure bug-free deployments.</div>
+          </div>
+          <div class="project">
+            <strong>Freelance QA Specialist</strong>
+            <div style="font-size:13px;color:var(--muted);margin-top:6px">Delivered QA support for international clients. Provided thorough testing, detailed bug reports, and recommendations for improving user experience and performance.</div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px" id="clients">
+          <div class="section-title">Client Feedback & Testimonials</div>
+          <div class="reviews">
+            <div class="review">
+              <div class="meta"><div class="name">Corporate Manager</div><div style="margin-left:auto" class="stars">★★★★★</div></div>
+              <div style="font-size:13px;color:var(--muted)">“Reliable QA professional who ensures timely testing cycles and high-quality outputs.”</div>
+            </div>
+            <div class="review">
+              <div class="meta"><div class="name">Freelance Client</div><div style="margin-left:auto" class="stars">★★★★★</div></div>
+              <div style="font-size:13px;color:var(--muted)">“Delivered fast and precise QA results. Great communication and thorough reports.”</div>
+            </div>
+            <div class="review">
+              <div class="meta"><div class="name">Startup Founder</div><div style="margin-left:auto" class="stars">★★★★☆</div></div>
+              <div style="font-size:13px;color:var(--muted)">“Strong analytical skills and proactive in identifying usability issues.”</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- What Clients Say section (above footer) -->
+        <section class="what-clients" style="margin-top:18px;" aria-label="What Clients Say">
+          <div class="section-title">What Clients Say</div>
+          <p>Clients appreciate my attention to detail and fast delivery.</p>
+          <a class="upwork-btn" href="https://www.upwork.com/freelancers/~01904de38942cc1e82?viewMode=1" target="_blank" rel="noopener noreferrer">View My Upwork Reviews →</a>
+        </section>
+
+        <section class="card" style="margin-top:16px" id="contact">
+          <div class="section-title">Contact</div>
+          <p style="margin:0 0 8px;color:var(--muted)">Open to freelance, contract, and full-time QA opportunities.</p>
+          <div class="contact-form">
+            <input placeholder="Your name" />
+            <input placeholder="Email or LinkedIn link" />
+            <textarea rows="3" placeholder="Message"></textarea>
+            <button>Send message</button>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">Quick Facts</div>
+          <div style="color:var(--muted)">
+            <div>• Experience: 5+ years in QA (Corporate & Freelance)</div>
+            <div>• Certifications: ISTQB (or equivalent)</div>
+            <div>• Timezone: Philippines (GMT+8)</div>
+            <div>• Languages: English</div>
+          </div>
+          <div style="margin-top:12px">
+            <button id="copyUpwork">Copy Upwork profile link</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">Career Highlights</div>
+          <ul style="color:var(--muted);margin:0 0 0 18px">
+            <li>Developed test plans improving coverage by 30%</li>
+            <li>Executed regression testing for SaaS and e-commerce platforms</li>
+            <li>Integrated Playwright automation for rapid feedback loops</li>
+            <li>Supported Agile teams in multiple time zones</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© 2025 Eddy — QA Engineer. Professional portfolio suitable for corporate applications and freelance clients.</div>
+      <div class="footer-actions">
+        <a class="resume-btn" href="resume/Eddy_QA_Resume.pdf" download>Download Résumé (PDF)</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Typewriter Effect
+    const text = "Fast delivery • Test plans • Manual & Automation Testing";
+    let i = 0;
+    function typeWriter(){
+      if(i < text.length){
+        document.getElementById('typewriter').textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 70);
+      }
+    }
+    window.onload = ()=>{
+      document.querySelectorAll('.card').forEach((card,idx)=>{
+        setTimeout(()=>card.style.opacity = '1', idx*150);
+      });
+      typeWriter();
+    }
+
+    // Copy button
+    document.getElementById('copyUpwork').addEventListener('click', ()=>{
+      const profile = 'https://www.upwork.com/freelancers/~01904de38942cc1e82?viewMode=1';
+      navigator.clipboard?.writeText(profile).then(()=>alert('Upwork link copied.'))
+    });
+  </script>
+</body>
+</html>
