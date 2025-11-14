@@ -1,400 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rommelie (Lars) — QA Engineer • Portfolio</title>
-<meta name="description" content="Rommelie Larin — Lead/Senior Quality Assurance Engineer with expertise in manual and automation testing, Playwright, Selenium, API, and QA strategy." />
-<style>
-:root {
-  --bg: #0f1724;
-  --card: #0b1220;
-  --muted: #94a3b8;
-  --accent: #06b6d4;
-  --glass: rgba(255, 255, 255, 0.03);
-  --upwork: #108a00;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
-  margin: 0;
-  background: linear-gradient(180deg, #071029 0%, #071526 100%);
-  color: #e6eef8;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-nav {
-  position: sticky;
-  top: 12px;
-  z-index: 40;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  max-width: 980px;
-  margin: 16px auto;
-  padding: 8px 24px;
-  background: transparent;
-}
-.nav-links { display: flex; gap: 12px; align-items: center; }
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.2s ease, color 0.2s;
-}
-.nav-links a:hover {
-  background: rgba(255,255,255,0.02);
-  color: #fff;
-}
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 24px 24px 48px;
-  animation: fadeIn 1s ease-in;
-}
-header { display: flex; align-items: center; gap: 16px; animation: slideDown 0.8s ease-out; }
-.avatar {
-  width: 88px;
-  height: 88px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), #60a5fa);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #012;
-  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
-}
-h1 { margin: 0; font-size: 22px; }
-.tagline { color: var(--muted); font-size: 14px; margin-top: 4px; min-height: 22px; }
-.grid { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-top: 22px; }
-.card {
-  background: var(--card);
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeUp 1.2s ease forwards;
-  opacity: 0;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(2,6,23,0.7);
-}
-.skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.skill {
-  background: var(--glass);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 13px;
-  color: var(--muted);
-  transition: background 0.3s ease;
-}
-.skill:hover { background: rgba(6,182,212,0.2); color: #fff; }
-.section-title {
-  font-size: 13px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  position: relative;
-}
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 4px;
-}
-.projects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.project {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-  padding: 12px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(6,182,212,0.2); }
-.reviews { display: flex; flex-direction: column; gap: 10px; }
-.review {
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
-  padding: 12px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.review:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(6,182,212,0.2); }
-.meta { display: flex; align-items: center; gap: 8px; }
-.name { font-weight: 600; }
-.stars { color: #ffd166; font-size: 14px; }
-.what-clients { background: #f5f7fa; color: #072; padding: 18px; border-radius: 10px; margin-top: 20px; }
-.what-clients p { color: #083; margin: 8px 0; }
-.upwork-btn {
-  background: var(--upwork);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s;
-}
-.upwork-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(16,138,0,0.18); }
-footer { margin-top: 18px; color: var(--muted); font-size: 13px; text-align: center; animation: fadeIn 1.5s ease-in; }
-.footer-actions { margin-top: 10px; }
-.resume-btn {
-  background: linear-gradient(90deg, var(--accent), #60a5fa);
-  border: none;
-  color: #012;
-  font-weight: 700;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-.resume-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(6,182,212,0.4); }
-.contact-form { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-input, textarea, button {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.04);
-  background: transparent;
-  color: inherit;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-input:focus, textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 4px var(--accent);
-  outline: none;
-}
-button { background: linear-gradient(90deg, var(--accent), #60a5fa); border: none; color: #012; font-weight: 700; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-button:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(6,182,212,0.4); }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@keyframes slideDown { from {transform:translateY(-20px); opacity:0;} to {transform:translateY(0); opacity:1;} }
-@keyframes fadeUp { from {transform:translateY(20px); opacity:0;} to {transform:translateY(0); opacity:1;} }
-@media (max-width: 880px) { .grid { grid-template-columns: 1fr; } .projects { grid-template-columns: 1fr; } .nav-links { display: none; } }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rommelie Larin — Senior QA Engineer</title>
+  <meta name="description" content="Rommelie Larin — Senior QA Engineer (July 2017 — Present). Playwright, Selenium, API testing, UAT, accessibility, ETL."/>
+  <style>
+    :root{
+      --bg-1:#071029; --bg-2:#071526;
+      --card:#071025; --muted:#9aa9bf;
+      --accent:#06b6d4; --accent-2:#60a5fa;
+      --glass:rgba(255,255,255,0.03);
+      --radius:14px; --maxw:1100px; --text:#e6eef8;
+    }
+    body.light-mode{
+      --bg-1:#f7fbff; --bg-2:#eef6ff; --card:#ffffff; --muted:#4b5563; --text:#061223;
+      --glass: rgba(2,6,23,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+      color:var(--text); background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .page{max-width:var(--maxw); margin:36px auto; padding:24px;}
+    nav{display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;}
+    .brand{display:flex; gap:12px; align-items:center;}
+    .logo{width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:#012; font-weight:800; box-shadow:0 8px 30px rgba(6,182,212,0.12); transition:transform .3s;}
+    .logo:hover{transform:rotate(7deg) scale(1.03)}
+    .name{font-size:16px; margin:0}
+    .muted{color:var(--muted)}
+    .nav-actions{display:flex; gap:10px; align-items:center}
+    .nav-link{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px}
+    .mode-toggle{background:transparent; border:1px solid rgba(255,255,255,0.04); padding:6px 10px; color:var(--muted); border-radius:10px; cursor:pointer}
+    .hero{display:flex; gap:24px; align-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:18px; padding:26px; box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+    .hero-left{flex:1; min-width:0}
+    .headline{font-size:28px; font-weight:800; margin:0 0 8px; line-height:1.02; background:linear-gradient(90deg,#fff,#cfefff 60%); -webkit-background-clip:text; color:transparent}
+    .subline{color:var(--muted); margin:0 0 12px; font-size:14px}
+    .chips{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{background:var(--glass); padding:8px 10px; border-radius:999px; color:var(--muted); font-size:13px; transition:transform .24s}
+    .chip:hover{transform:translateY(-6px) scale(1.03); color:var(--text)}
+    .hero-right{width:220px; display:flex; justify-content:center; align-items:center}
+    .avatar-card{width:220px; border-radius:12px; padding:14px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); box-shadow:0 12px 36px rgba(2,6,23,0.45); transition:transform .45s}
+    .avatar-big{width:110px; height:110px; border-radius:16px; margin:0 auto; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:#012; font-weight:800; font-size:36px}
+    .avatar-meta{margin-top:12px; font-weight:700}
+    .avatar-meta small{display:block; font-weight:400; color:var(--muted); margin-top:4px; font-size:13px}
+
+    .grid{display:grid; grid-template-columns:1fr 340px; gap:22px; margin-top:22px; align-items:start}
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 12px 30px rgba(2,6,23,0.6); transform:translateY(18px); opacity:0; transition:transform .6s, opacity .6s}
+    .card.revealed{transform:none; opacity:1}
+    .section-title{font-size:12px; text-transform:uppercase; color:var(--muted); letter-spacing:1px; margin-bottom:10px; position:relative}
+    .section-title::after{content:""; position:absolute; left:0; bottom:-8px; width:36px; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:3px}
+
+    .projects{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .project{border-radius:10px; padding:14px; cursor:pointer; transition:transform .25s, box-shadow .25s; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .project:hover{transform:translateY(-12px) rotate(-0.4deg) scale(1.02); box-shadow:0 22px 44px rgba(6,182,212,0.12)}
+    .muted{color:var(--muted); font-size:13px}
+
+    .stack{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .skill-pill{padding:8px 10px; border-radius:10px; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); color:var(--muted); transition:transform .24s}
+    .skill-pill:hover{transform:translateY(-6px) scale(1.03); color:var(--text)}
+
+    .timeline{display:flex; flex-direction:column; gap:12px}
+    .timeline-item{display:flex; gap:12px; align-items:flex-start}
+    .timeline-dot{width:12px; height:12px; border-radius:50%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); margin-top:6px}
+    .timeline-body{background:var(--glass); padding:10px 12px; border-radius:8px}
+
+    .cert-grid{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .cert-thumb{width:180px; height:120px; border-radius:10px; overflow:hidden; cursor:pointer; box-shadow:0 10px 30px rgba(2,6,23,0.45); transition:transform .35s, box-shadow .35s}
+    .cert-thumb img{width:100%; height:100%; object-fit:cover; display:block}
+    .cert-thumb:hover{transform:translateY(-10px) scale(1.02); box-shadow:0 30px 60px rgba(6,182,212,0.16)}
+
+    .modal{position:fixed; inset:0; display:none; z-index:1200; align-items:center; justify-content:center; background:linear-gradient(0deg, rgba(0,0,0,0.85), rgba(0,0,0,0.85)); padding:28px}
+    .modal.show{display:flex}
+    .modal-img{max-width:92%; max-height:86%; border-radius:12px; box-shadow:0 30px 80px rgba(2,6,23,0.8); transform:scale(.92); opacity:0; transition:transform .28s, opacity .28s}
+    .modal.show .modal-img{transform:scale(1); opacity:1}
+    .modal-caption{color:var(--muted); margin-top:12px; text-align:center; font-size:14px}
+    .modal-close{position:fixed; top:22px; right:28px; color:var(--text); font-size:32px; cursor:pointer; background: rgba(255,255,255,0.02); padding:6px 10px; border-radius:8px; box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+
+    footer{margin-top:28px; text-align:center; color:var(--muted); font-size:13px}
+
+    @media (max-width:1000px){ .grid{grid-template-columns:1fr} .hero-right{display:none} .cert-thumb{width:140px;height:96px} .projects{grid-template-columns:1fr} }
+  </style>
 </head>
 <body>
-<nav>
-  <div style="font-weight:700; color:#fff">Lars — QA Engineer</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
+  <div class="page">
+    <nav>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">E</div>
+        <div>
+          <div class="name">Rommelie Larin</div>
+          <div class="muted">Senior Quality Assurance Engineer</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="nav-link" href="#certs">Certifications</a>
+        <button id="modeToggle" class="mode-toggle" aria-pressed="false">Dark Mode</button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div class="hero-left">
+        <div class="headline">Quality Assurance • Reliability • Automation</div>
+        <p class="subline muted">Senior QA Engineer focused on enterprise & SaaS products — automation frameworks, UAT, accessibility, and data integrity.</p>
+
+        <div class="chips" aria-hidden="true">
+          <div class="chip">Playwright</div>
+          <div class="chip">Selenium</div>
+          <div class="chip">API Testing</div>
+          <div class="chip">Accessibility</div>
+          <div class="chip">ETL / SQL</div>
+          <div class="chip">CI/CD</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <a class="nav-link" href="resume/Eddy_QA_Resume.pdf" download style="background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#012; border-radius:12px; padding:10px 12px; font-weight:700;">Download Résumé</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="avatar-card" id="avatarCard" tabindex="0" aria-label="Profile card">
+          <div class="avatar-big">E</div>
+          <div class="avatar-meta">
+            <span id="experienceYears">—</span>
+            <small id="experienceRange" class="muted">July 2017 – Present</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <main>
+        <section class="card" data-reveal>
+          <div class="section-title">Profile</div>
+          <p class="muted">Senior QA Engineer with a strong background in enterprise QA, automation frameworks, UAT, and accessibility. I focus on reliability, scalable tests, and collaboration with product and engineering teams.</p>
+
+          <div style="margin-top:12px">
+            <div class="section-title">Tech Stack</div>
+            <div class="stack">
+              <div class="skill-pill">Playwright</div>
+              <div class="skill-pill">Selenium</div>
+              <div class="skill-pill">TypeScript / Java</div>
+              <div class="skill-pill">Postman</div>
+              <div class="skill-pill">Postgres / MySQL</div>
+              <div class="skill-pill">Jenkins / CI</div>
+              <div class="skill-pill">Figma Validation</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="portfolio" data-reveal style="margin-top:16px">
+          <div class="section-title">Selected Projects</div>
+          <div class="projects">
+            <div class="project" tabindex="0" role="button" aria-pressed="false">
+              <h4>HRMS ERP — Automation Framework</h4>
+              <div class="muted">Designed Playwright POM framework covering Employee Management, Leave, Payroll, and Attendance; integrated with CI to run nightly regression suites.</div>
+            </div>
+
+            <div class="project" tabindex="0" role="button" aria-pressed="false">
+              <h4>Core Financials SaaS — UAT & QA</h4>
+              <div class="muted">Led UAT testing for multi-tenant SaaS, automated critical regression suites, and analyzed cross-client bug reports for root cause.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="certs" data-reveal style="margin-top:16px">
+          <div class="section-title">Certifications & Awards</div>
+          <ul class="muted" style="margin-left:18px">
+            <li>Accessibility Testing — WixLearn (June 2023)</li>
+            <li>Scrum Foundation Professional Certificate — Certiprof (May 2022)</li>
+            <li>Automation Specialist Level 1 &amp; 2 — Tricentis (Oct 2021)</li>
+            <li>Productivity & Defect Hunter Awardee (multiple periods)</li>
+          </ul>
+
+          <div class="cert-grid" style="margin-top:14px">
+            <div class="cert-thumb" data-caption="Accessibility — Screenshot 2025-11-14 185540" tabindex="0" role="button">
+              <img src="certification/Screenshot 2025-11-14 185540.png" alt="Accessibility cert">
+            </div>
+            <div class="cert-thumb" data-caption="Scrum — Screenshot 2025-11-14 185715" tabindex="0" role="button">
+              <img src="certification/Screenshot 2025-11-14 185715.png" alt="Scrum cert">
+            </div>
+            <div class="cert-thumb" data-caption="Automation Specialist — Screenshot 2025-11-14 185453" tabindex="0" role="button">
+              <img src="certification/Screenshot 2025-11-14 185453.png" alt="Automation cert">
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card" data-reveal>
+          <div class="section-title">Experience</div>
+          <div class="muted" style="line-height:1.6">
+            July 2017 – Present<br>
+            <strong id="experienceSummary">—</strong>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px" data-reveal>
+          <div class="section-title">Career Highlights</div>
+          <ul class="muted" style="margin-left:18px">
+            <li>Built automation frameworks (Playwright / POM)</li>
+            <li>Reduced regression cycles & improved UAT quality</li>
+            <li>Cross-browser and accessibility testing expertise</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer>© 2025 Rommelie Larin — Senior QA Engineer</footer>
   </div>
-</nav>
 
-<div class="container">
-<header id="about">
-  <div class="avatar">E</div>
-  <div>
-    <h1>Lars — Lead/Senior QA Engineer</h1>
-    <p class="tagline" id="typewriter"></p>
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-close" id="modalClose" title="Close">&times;</div>
+    <img id="modalImg" class="modal-img" alt="Certification image">
+    <div id="modalCaption" class="modal-caption"></div>
   </div>
-</header>
 
-<div class="grid">
-<main>
-  <section class="card">
-    <div class="section-title">Profile Summary</div>
-    <p>Lead/Senior Quality Assurance Engineer with 5+ years of experience in corporate and freelance projects. Skilled in manual and automation testing, QA strategy, and cross-functional collaboration. Proven track record in improving defect detection, regression coverage, and release quality.</p>
+  <script>
+    // Dynamic experience calculation (from July 2017 to today)
+    function updateExperience() {
+      const startDate = new Date(2017, 6, 1); // July 2017 (month index 6)
+      const now = new Date();
 
-    <div style="margin-top:12px">
-      <div class="section-title">Core Expertise</div>
-      <ul style="margin:0 0 0 18px; color:var(--muted)">
-        <li>Manual Testing: Functional, Regression, Exploratory, Sanity, Smoke</li>
-        <li>Automation Testing: Playwright, Selenium, Tosca</li>
-        <li>API Testing: Postman, REST validation</li>
-        <li>UI/UX Validation: Figma design comparison, cross-browser testing</li>
-        <li>ETL & Database Testing: Postgres SQL, MySQL</li>
-        <li>Documentation: Test Plans, Test Cases, Test Closure Reports</li>
-        <li>Methodologies: Agile & Waterfall</li>
-      </ul>
-    </div>
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
 
-    <div style="margin-top:12px">
-      <div class="section-title">Skills & Tools</div>
-      <div class="skills">
-        <span class="skill">Manual Testing</span>
-        <span class="skill">Automation (Playwright, Selenium)</span>
-        <span class="skill">API Testing</span>
-        <span class="skill">Figma Validation</span>
-        <span class="skill">Jira / HP-ALM / TFS</span>
-        <span class="skill">Git & Jenkins CI/CD</span>
-        <span class="skill">Postgres / MySQL</span>
-        <span class="skill">Agile / Scrum</span>
-        <span class="skill">Accessibility Testing</span>
-      </div>
-    </div>
-  </section>
+      if (months < 0) { years--; months += 12; }
 
-  <section class="card" id="portfolio" style="margin-top:16px">
-    <div class="section-title">Portfolio Highlights</div>
-    <div class="projects">
-      <div class="project">
-        <strong>Voicebot Web App — QA</strong>
-        <div style="font-size:13px; color:var(--muted); margin-top:6px">
-          End-to-end testing, privacy & legal page validation, regression and smoke tests.
-        </div>
-      </div>
-      <div class="project">
-        <strong>Sales Platform — Regression & Automation</strong>
-        <div style="font-size:13px; color:var(--muted); margin-top:6px">
-          Built regression checklist, automated smoke tests via Playwright, reduced release regression time.
-        </div>
-      </div>
-      <div class="project">
-        <strong>Mobile Checkout Flow — Exploratory Testing</strong>
-        <div style="font-size:13px; color:var(--muted); margin-top:6px">
-          Found payment and session edge-cases, provided clear reproduction steps and patches.
-        </div>
-      </div>
-      <div class="project">
-        <strong>Privacy Policy Validation</strong>
-        <div style="font-size:13px; color:var(--muted); margin-top:6px">
-          Compared legal text to design files, flagged placeholders & third-party references.
-        </div>
-      </div>
-    </div>
-  </section>
+      const yearsText = years === 1 ? '1 Year' : `${years} Years`;
+      const monthsText = months === 1 ? '1 Month' : `${months} Months`;
+      const experienceString = `${yearsText} & ${monthsText} Experience`;
 
-  <section class="card" style="margin-top:16px">
-    <div class="section-title">Professional Experience</div>
-    <div class="project">
-      <strong>Microsourcing Inc — QA</strong>
-      <div style="font-size:13px; color:var(--muted); margin-top:6px">
-        Designed Playwright automation framework (POM) for HRMS ERP, reduced manual testing by 70%, executed UAT support, collaborated in Agile sprints.
-      </div>
-    </div>
-    <div class="project">
-      <strong>Cartera Interchange Corporation — Lead/Senior QA</strong>
-      <div style="font-size:13px; color:var(--muted); margin-top:6px">
-        Led 15-member QA team, tested SaaS applications, reduced defects by 30%, improved project delivery by 20%.
-      </div>
-    </div>
-    <div class="project">
-      <strong>Infor PSSC Inc — UAT/QA Analyst</strong>
-      <div style="font-size:13px; color:var(--muted); margin-top:6px">
-        Automated repetitive Selenium tests for multi-tenant SaaS ERP, analyzed client-reported bugs, enabled faster post-release regression.
-      </div>
-    </div>
-    <div class="project">
-      <strong>McCann MRM — QA Analyst</strong>
-      <div style="font-size:13px; color:var(--muted); margin-top:6px">
-        Supported 7 luxury car brands, developed UI/UX & functional test cases, performed cross-browser testing across countries.
-      </div>
-    </div>
-    <div class="project">
-      <strong>Accenture Inc — Test Analyst</strong>
-      <div style="font-size:13px; color:var(--muted); margin-top:6px">
-        ETL & EDI testing for X12 837 across 31 states & 20 countries, automated result generation & Tosca scripts, improved QA efficiency.
-      </div>
-    </div>
-  </section>
+      const summaryText = `${yearsText} ${monthsText}`;
 
-  <section class="card" style="margin-top:16px" id="clients">
-    <div class="section-title">Client Feedback & Testimonials</div>
-    <div class="reviews">
-      <div class="review">
-        <div class="meta">
-          <div class="name">Corporate Manager</div>
-          <div style="margin-left:auto" class="stars">★★★★★</div>
-        </div>
-        <div style="font-size:13px; color:var(--muted)">
-          “Reliable QA professional who ensures timely testing cycles and high-quality outputs.”
-        </div>
-      </div>
-      <div class="review">
-        <div class="meta">
-          <div class="name">Freelance Client</div>
-          <div style="margin-left:auto" class="stars">★★★★★</div>
-        </div>
-        <div style="font-size:13px; color:var(--muted)">
-          “Delivered fast and precise QA results. Great communication and thorough reports.”
-        </div>
-      </div>
-      <div class="review">
-        <div class="meta">
-          <div class="name">Startup Founder</div>
-          <div style="margin-left:auto" class="stars">★★★★☆</div>
-        </div>
-        <div style="font-size:13px; color:var(--muted)">
-          “Strong analytical skills and proactive in identifying usability issues.”
-        </div>
-      </div>
-    </div>
-  </section>
+      const elYears = document.getElementById('experienceYears');
+      const elRange = document.getElementById('experienceRange');
+      const elSummary = document.getElementById('experienceSummary');
 
-  <section class="card" style="margin-top:16px">
-    <div class="section-title">Awards & Certifications</div>
-    <ul style="color:var(--muted); margin:0 0 0 18px">
-      <li>Productivity/Agile Awardee: May 2018, Aug 2018, Oct–Dec 2019, Feb–Jun 2020, Nov 2020–Jan 2021</li>
-      <li>Defect Hunter Awardee: Nov 2018, Jan–May 2019, Jan–Mar 2020, Jul–Nov 2020, Jan–Mar 2021</li>
-      <li>Accessibility Testing Certified: WixLearn, June 2023</li>
-      <li>Scrum Foundation Professional Certificate (SFPC): Certiprof, May 2022</li>
-      <li>Automation Specialist Level 1 & 2: Tricentis, Oct 2021</li>
-    </ul>
-  </section>
-
-  <section class="card" style="margin-top:16px">
-    <div class="section-title">Education</div>
-    <ul style="color:var(--muted); margin:0 0 0 18px">
-      <li>Rizal Technological University — MS in Information Technology (8 units completed), 2022–2023</li>
-    </ul>
-  </section>
-
-  <section class="card" style="margin-top:16px" id="contact">
-    <div class="section-title">Contact</div>
-    <p style="margin:0 0 8px; color:var(--muted)">You can reach me via email or LinkedIn for QA collaborations or freelance projects.</p>
-    <div class="contact-form">
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <textarea rows="4" placeholder="Message"></textarea>
-      <button>Send Message</button>
-    </div>
-    <div class="footer-actions" style="margin-top:12px">
-      <a class="resume-btn" href="#">Download Résumé</a>
-    </div>
-  </section>
-</main>
-</div>
-
-<footer>
-  &copy; 2025 Rommelie Larin. All rights reserved.
-</footer>
-
-<script>
-  // Simple typewriter effect for tagline
-  const tagline = document.getElementById('typewriter');
-  const phrases = [
-    'Manual & Automation QA Expert',
-    'Playwright • Selenium • API Testing',
-    'UAT • Regression • Figma Validation',
-    'Cross-browser & Accessibility Testing'
-  ];
-  let i = 0, j = 0, currentPhrase = '', isDeleting = false;
-  function type() {
-    if (i >= phrases.length) i = 0;
-    let fullText = phrases[i];
-    if (isDeleting) {
-      currentPhrase = fullText.substring(0, j--);
-    } else {
-      currentPhrase = fullText.substring(0, j++);
+      if (elYears) elYears.textContent = experienceString;
+      if (elRange) elRange.textContent = 'July 2017 – Present';
+      if (elSummary) elSummary.textContent = experienceString;
     }
-    tagline.textContent = currentPhrase;
-    if (!isDeleting && j === fullText.length + 1) { isDeleting = true; setTimeout(type, 1000); return; }
-    if (isDeleting && j === 0) { isDeleting = false; i++; setTimeout(type, 300); return; }
-    setTimeout(type, isDeleting ? 50 : 100);
-  }
-  type();
-</script>
+    updateExperience();
+    // update hourly to keep accurate over time
+    setInterval(updateExperience, 1000 * 60 * 60);
+
+    // Theme toggle
+    const modeToggle = document.getElementById('modeToggle');
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const pressed = document.body.classList.contains('light-mode');
+      modeToggle.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+      modeToggle.textContent = pressed ? 'Light Mode' : 'Dark Mode';
+    });
+    // initial text
+    modeToggle.textContent = 'Dark Mode';
+
+    // Intersection observer reveals
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); }
+      });
+    }, {threshold: 0.12});
+    reveals.forEach(r => io.observe(r));
+
+    // Avatar micro interaction
+    const avatarCard = document.getElementById('avatarCard');
+    if (avatarCard) {
+      avatarCard.addEventListener('mousemove', (e) => {
+        const r = avatarCard.getBoundingClientRect();
+        const x = (e.clientX - r.left) - r.width / 2;
+        const y = (e.clientY - r.top) - r.height / 2;
+        avatarCard.style.transform = `perspective(800px) rotateY(${x/20}deg) rotateX(${-y/20}deg)`;
+      });
+      avatarCard.addEventListener('mouseleave', () => avatarCard.style.transform = 'none');
+    }
+
+    // Certification modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.cert-thumb').forEach(thumb => {
+      const handler = () => {
+        const img = thumb.querySelector('img');
+        modalImg.src = img.src;
+        modalCaption.textContent = thumb.getAttribute('data-caption') || img.alt || '';
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+        modalClose.focus();
+      };
+      thumb.addEventListener('click', handler);
+      thumb.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); }});
+    });
+
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Make project tiles keyboard-activatable
+    document.querySelectorAll('.project').forEach(p => {
+      p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }});
+    });
+
+    // Stagger reveal on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.card').forEach((c, idx) => setTimeout(() => c.classList.add('revealed'), idx*120));
+    });
+  </script>
 </body>
 </html>
