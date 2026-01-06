@@ -1,134 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rommelie Larin — Senior QA Engineer</title>
-  <meta name="description" content="Rommelie Larin — Senior QA Engineer (July 2017 — Present). Playwright, Selenium, API testing, UAT, accessibility, ETL."/>
+  <meta name="description"
+    content="Rommelie Larin — Senior QA Engineer & Upwork Freelancer. 8+ years QA experience. Playwright, Selenium, API testing, UAT, accessibility. 18+ Upwork projects completed." />
+
   <style>
-    :root{
-      --bg-1:#071029; --bg-2:#071526;
-      --card:#071025; --muted:#9aa9bf;
-      --accent:#06b6d4; --accent-2:#60a5fa;
-      --glass:rgba(255,255,255,0.03);
-      --radius:14px; --maxw:1100px; --text:#e6eef8;
+    :root {
+      --bg-1: #071029;
+      --bg-2: #071526;
+      --card: #071025;
+      --muted: #9aa9bf;
+      --accent: #06b6d4;
+      --accent-2: #60a5fa;
+      --glass: rgba(255, 255, 255, 0.03);
+      --radius: 14px;
+      --maxw: 1100px;
+      --text: #e6eef8;
     }
-    body.light-mode{
-      --bg-1:#f7fbff; --bg-2:#eef6ff; --card:#ffffff; --muted:#4b5563; --text:#061223;
-      --glass: rgba(2,6,23,0.03);
+
+    body.light-mode {
+      --bg-1: #f7fbff;
+      --bg-2: #eef6ff;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --text: #061223;
+      --glass: rgba(2, 6, 23, 0.03);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-      color:var(--text); background:linear-gradient(180deg,var(--bg-1),var(--bg-2));
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+
+    * {
+      box-sizing: border-box
     }
-    .page{max-width:var(--maxw); margin:36px auto; padding:24px;}
-    nav{display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;}
-    .brand{display:flex; gap:12px; align-items:center;}
-    .logo{width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:#012; font-weight:800; box-shadow:0 8px 30px rgba(6,182,212,0.12); transition:transform .3s;}
-    .logo:hover{transform:rotate(7deg) scale(1.03)}
-    .name{font-size:16px; margin:0}
-    .muted{color:var(--muted)}
-    .nav-actions{display:flex; gap:10px; align-items:center}
-    .nav-link{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px}
-    .mode-toggle{background:transparent; border:1px solid rgba(255,255,255,0.04); padding:6px 10px; color:var(--muted); border-radius:10px; cursor:pointer}
-    .hero{display:flex; gap:24px; align-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:18px; padding:26px; box-shadow:0 10px 40px rgba(2,6,23,0.6)}
-    .hero-left{flex:1; min-width:0}
-    .headline{font-size:28px; font-weight:800; margin:0 0 8px; line-height:1.02; background:linear-gradient(90deg,#fff,#cfefff 60%); -webkit-background-clip:text; color:transparent}
-    .subline{color:var(--muted); margin:0 0 12px; font-size:14px}
-    .chips{display:flex; gap:10px; flex-wrap:wrap}
-    .chip{background:var(--glass); padding:8px 10px; border-radius:999px; color:var(--muted); font-size:13px; transition:transform .24s}
-    .chip:hover{transform:translateY(-6px) scale(1.03); color:var(--text)}
-    .hero-right{width:220px; display:flex; justify-content:center; align-items:center}
-    .avatar-card{width:220px; border-radius:12px; padding:14px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); box-shadow:0 12px 36px rgba(2,6,23,0.45); transition:transform .45s}
-    .avatar-big{width:110px; height:110px; border-radius:16px; margin:0 auto; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:#012; font-weight:800; font-size:36px}
-    .avatar-meta{margin-top:12px; font-weight:700}
-    .avatar-meta small{display:block; font-weight:400; color:var(--muted); margin-top:4px; font-size:13px}
 
-    .grid{display:grid; grid-template-columns:1fr 340px; gap:22px; margin-top:22px; align-items:start}
-    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 12px 30px rgba(2,6,23,0.6); transform:translateY(18px); opacity:0; transition:transform .6s, opacity .6s}
-    .card.revealed{transform:none; opacity:1}
-    .section-title{font-size:12px; text-transform:uppercase; color:var(--muted); letter-spacing:1px; margin-bottom:10px; position:relative}
-    .section-title::after{content:""; position:absolute; left:0; bottom:-8px; width:36px; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:3px}
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    }
 
-    .projects{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    .project{border-radius:10px; padding:14px; cursor:pointer; transition:transform .25s, box-shadow .25s; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-    .project:hover{transform:translateY(-12px) rotate(-0.4deg) scale(1.02); box-shadow:0 22px 44px rgba(6,182,212,0.12)}
-    .muted{color:var(--muted); font-size:13px}
+    .page {
+      max-width: var(--maxw);
+      margin: 36px auto;
+      padding: 24px;
+    }
 
-    .stack{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
-    .skill-pill{padding:8px 10px; border-radius:10px; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); color:var(--muted); transition:transform .24s}
-    .skill-pill:hover{transform:translateY(-6px) scale(1.03); color:var(--text)}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    .timeline{display:flex; flex-direction:column; gap:12px}
-    .timeline-item{display:flex; gap:12px; align-items:flex-start}
-    .timeline-dot{width:12px; height:12px; border-radius:50%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); margin-top:6px}
-    .timeline-body{background:var(--glass); padding:10px 12px; border-radius:8px}
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
-    .cert-grid{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
-    .cert-thumb{width:180px; height:120px; border-radius:10px; overflow:hidden; cursor:pointer; box-shadow:0 10px 30px rgba(2,6,23,0.45); transition:transform .35s, box-shadow .35s}
-    .cert-thumb img{width:100%; height:100%; object-fit:cover; display:block}
-    .cert-thumb:hover{transform:translateY(-10px) scale(1.02); box-shadow:0 30px 60px rgba(6,182,212,0.16)}
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #012;
+    }
 
-    .modal{position:fixed; inset:0; display:none; z-index:1200; align-items:center; justify-content:center; background:linear-gradient(0deg, rgba(0,0,0,0.85), rgba(0,0,0,0.85)); padding:28px}
-    .modal.show{display:flex}
-    .modal-img{max-width:92%; max-height:86%; border-radius:12px; box-shadow:0 30px 80px rgba(2,6,23,0.8); transform:scale(.92); opacity:0; transition:transform .28s, opacity .28s}
-    .modal.show .modal-img{transform:scale(1); opacity:1}
-    .modal-caption{color:var(--muted); margin-top:12px; text-align:center; font-size:14px}
-    .modal-close{position:fixed; top:22px; right:28px; color:var(--text); font-size:32px; cursor:pointer; background: rgba(255,255,255,0.02); padding:6px 10px; border-radius:8px; box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+    .muted {
+      color: var(--muted)
+    }
 
-    footer{margin-top:28px; text-align:center; color:var(--muted); font-size:13px}
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
 
-    @media (max-width:1000px){ .grid{grid-template-columns:1fr} .hero-right{display:none} .cert-thumb{width:140px;height:96px} .projects{grid-template-columns:1fr} }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 10px
+    }
+
+    .mode-toggle {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, .05);
+      padding: 6px 10px;
+      border-radius: 10px;
+      color: var(--muted)
+    }
+
+    .hero {
+      margin-top: 20px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .02), transparent);
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .headline {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0
+    }
+
+    .chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .chip {
+      background: var(--glass);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px
+    }
+
+    .chip a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 22px;
+      margin-top: 22px
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .project {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .02), transparent);
+      padding: 14px;
+      border-radius: 10px
+    }
+
+    /* Certification grid */
+    .cert-grid {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .cert-thumb {
+      width: 190px;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(2, 6, 23, .45);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .cert-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cert-thumb:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 25px 55px rgba(6, 182, 212, .25);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 28px;
+      font-size: 13px
+    }
+
+    @media(max-width:1000px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="page">
+
+    <!-- NAV -->
     <nav>
       <div class="brand">
-        <div class="logo" aria-hidden="true">E</div>
+        <div class="logo">E</div>
         <div>
-          <div class="name">Rommelie Larin</div>
-          <div class="muted">Senior Quality Assurance Engineer</div>
+          <strong>Rommelie Larin</strong><br>
+          <span class="muted">Senior QA Engineer</span>
         </div>
       </div>
-
       <div class="nav-actions">
-        <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#portfolio">Portfolio</a>
-        <a class="nav-link" href="#certs">Certifications</a>
-        <button id="modeToggle" class="mode-toggle" aria-pressed="false">Dark Mode</button>
+        <a class="nav-link" href="#certifications">Certifications</a>
+        <a class="nav-link" href="#freelance">Upwork</a>
+        <button id="modeToggle" class="mode-toggle">Dark Mode</button>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="about">
-      <div class="hero-left">
-        <div class="headline">Quality Assurance • Reliability • Automation</div>
-        <p class="subline muted">Senior QA Engineer focused on enterprise & SaaS products — automation frameworks, UAT, accessibility, and data integrity.</p>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="headline">Quality Assurance • Automation • Reliability</h1>
+        <p class="muted">
+          Senior QA Engineer with enterprise & freelance experience delivering reliable,
+          scalable test solutions.
+        </p>
 
-        <div class="chips" aria-hidden="true">
+        <div class="chips">
           <div class="chip">Playwright</div>
           <div class="chip">Selenium</div>
           <div class="chip">API Testing</div>
           <div class="chip">Accessibility</div>
-          <div class="chip">ETL / SQL</div>
           <div class="chip">CI/CD</div>
-        </div>
-
-        <div style="margin-top:14px">
-          <a class="nav-link" href="resume/Eddy_QA_Resume.pdf" download style="background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#012; border-radius:12px; padding:10px 12px; font-weight:700;">Download Résumé</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="avatar-card" id="avatarCard" tabindex="0" aria-label="Profile card">
-          <div class="avatar-big">E</div>
-          <div class="avatar-meta">
-            <span id="experienceYears">—</span>
-            <small id="experienceRange" class="muted">July 2017 – Present</small>
+          <div class="chip">
+            <a href="https://www.upwork.com/freelancers/~01904de38942cc1e82?mp_source=share" target="_blank">
+              Upwork Freelancer • 18 Projects
+            </a>
           </div>
         </div>
       </div>
@@ -136,190 +248,131 @@
 
     <div class="grid">
       <main>
-        <section class="card" data-reveal>
-          <div class="section-title">Profile</div>
-          <p class="muted">Senior QA Engineer with a strong background in enterprise QA, automation frameworks, UAT, and accessibility. I focus on reliability, scalable tests, and collaboration with product and engineering teams.</p>
 
-          <div style="margin-top:12px">
-            <div class="section-title">Tech Stack</div>
-            <div class="stack">
-              <div class="skill-pill">Playwright</div>
-              <div class="skill-pill">Selenium</div>
-              <div class="skill-pill">TypeScript / Java</div>
-              <div class="skill-pill">Postman</div>
-              <div class="skill-pill">Postgres / MySQL</div>
-              <div class="skill-pill">Jenkins / CI</div>
-              <div class="skill-pill">Figma Validation</div>
-            </div>
-          </div>
+        <!-- PROFILE -->
+        <section class="card">
+          <h3>Profile</h3>
+          <p class="muted">
+            Senior QA Engineer with 8+ years of experience across enterprise systems and
+            freelance projects. Specialized in automation frameworks, UAT,
+            accessibility testing, and high-quality releases.
+          </p>
         </section>
 
-        <section class="card" id="portfolio" data-reveal style="margin-top:16px">
-          <div class="section-title">Selected Projects</div>
+        <!-- PROJECTS -->
+        <section class="card" id="portfolio">
+          <h3>Selected Projects</h3>
           <div class="projects">
-            <div class="project" tabindex="0" role="button" aria-pressed="false">
-              <h4>HRMS ERP — Automation Framework</h4>
-              <div class="muted">Designed Playwright POM framework covering Employee Management, Leave, Payroll, and Attendance; integrated with CI to run nightly regression suites.</div>
+            <div class="project">
+              <strong>HRMS ERP Automation</strong>
+              <p class="muted">
+                Designed Playwright POM framework covering payroll, attendance,
+                and employee management.
+              </p>
             </div>
-
-            <div class="project" tabindex="0" role="button" aria-pressed="false">
-              <h4>Core Financials SaaS — UAT & QA</h4>
-              <div class="muted">Led UAT testing for multi-tenant SaaS, automated critical regression suites, and analyzed cross-client bug reports for root cause.</div>
+            <div class="project">
+              <strong>Financial SaaS UAT</strong>
+              <p class="muted">
+                Led UAT and regression automation for a multi-tenant SaaS platform.
+              </p>
             </div>
           </div>
         </section>
 
-        <section class="card" id="certs" data-reveal style="margin-top:16px">
-          <div class="section-title">Certifications & Awards</div>
-          <ul class="muted" style="margin-left:18px">
-            <li>Accessibility Testing — WixLearn (June 2023)</li>
-            <li>Scrum Foundation Professional Certificate — Certiprof (May 2022)</li>
-            <li>Automation Specialist Level 1 &amp; 2 — Tricentis (Oct 2021)</li>
-            <li>Productivity & Defect Hunter Awardee (multiple periods)</li>
+        <!-- CERTIFICATIONS (WITH LINKS) -->
+        <section class="card" id="certifications">
+          <h3>Certifications & Awards</h3>
+          <ul class="muted">
+            <li>
+              <strong>Automation Specialist Level 1 (AS1) — Tricentis</strong> ·
+              <a href="certification/Screenshot 2025-11-14 185453.png" target="_blank">View</a>
+            </li>
+            <li>
+              <strong>Automation Specialist Level 2 (AS2) — Tricentis</strong> ·
+              <a href="certification/Screenshot 2025-11-14 185540.png" target="_blank">View</a>
+            </li>
+            <li>
+              <strong>Scrum Foundation Professional Certificate — CertiProf</strong> ·
+              <a href="certification/Screenshot 2025-11-14 185715.png" target="_blank">View</a>
+            </li>
+            <li>
+              <strong>Productivity & Defect Hunter Awardee</strong> (Multiple periods)
+            </li>
           </ul>
 
-          <div class="cert-grid" style="margin-top:14px">
-            <div class="cert-thumb" data-caption="Accessibility — Screenshot 2025-11-14 185540" tabindex="0" role="button">
-              <img src="certification/Screenshot 2025-11-14 185540.png" alt="Accessibility cert">
-            </div>
-            <div class="cert-thumb" data-caption="Scrum — Screenshot 2025-11-14 185715" tabindex="0" role="button">
-              <img src="certification/Screenshot 2025-11-14 185715.png" alt="Scrum cert">
-            </div>
-            <div class="cert-thumb" data-caption="Automation Specialist — Screenshot 2025-11-14 185453" tabindex="0" role="button">
-              <img src="certification/Screenshot 2025-11-14 185453.png" alt="Automation cert">
-            </div>
+          <div class="cert-grid">
+            <a class="cert-thumb" href="certification/Screenshot 2025-11-14 185453.png" target="_blank">
+              <img src="certification/Screenshot 2025-11-14 185453.png" alt="AS1 Certificate">
+            </a>
+            <a class="cert-thumb" href="certification/Screenshot 2025-11-14 185540.png" target="_blank">
+              <img src="certification/Screenshot 2025-11-14 185540.png" alt="AS2 Certificate">
+            </a>
+            <a class="cert-thumb" href="certification/Screenshot 2025-11-14 185715.png" target="_blank">
+              <img src="certification/Screenshot 2025-11-14 185715.png" alt="CertiProf Certificate">
+            </a>
           </div>
         </section>
+
+        <!-- UPWORK -->
+        <section class="card" id="freelance">
+          <h3>Freelance & Upwork Experience</h3>
+          <p class="muted">
+            Verified Upwork freelancer with <strong>18 successfully completed projects</strong>
+            for international clients.
+          </p>
+
+          <ul class="muted">
+            <li>Manual, automation, regression & UAT testing</li>
+            <li>Playwright & Selenium framework creation</li>
+            <li>API testing & UI validation against Figma</li>
+            <li>Test plans, bug reports & QA documentation</li>
+          </ul>
+
+          <a class="nav-link" style="display:inline-block;margin-top:10px;
+           background:linear-gradient(90deg,var(--accent),var(--accent-2));
+           color:#012;font-weight:700" href="https://www.upwork.com/freelancers/~01904de38942cc1e82?mp_source=share"
+            target="_blank">
+            View Upwork Profile
+          </a>
+        </section>
+
       </main>
 
+      <!-- SIDEBAR -->
       <aside>
-        <div class="card" data-reveal>
-          <div class="section-title">Experience</div>
-          <div class="muted" style="line-height:1.6">
+        <div class="card">
+          <h3>Experience</h3>
+          <p class="muted">
             July 2017 – Present<br>
-            <strong id="experienceSummary">—</strong>
-          </div>
+            <strong>Senior QA Engineer • Enterprise & Freelance</strong><br>
+            Upwork Freelancer — 18 Completed Projects
+          </p>
         </div>
 
-        <div class="card" style="margin-top:14px" data-reveal>
-          <div class="section-title">Career Highlights</div>
-          <ul class="muted" style="margin-left:18px">
-            <li>Built automation frameworks (Playwright / POM)</li>
-            <li>Reduced regression cycles & improved UAT quality</li>
-            <li>Cross-browser and accessibility testing expertise</li>
+        <div class="card">
+          <h3>Career Highlights</h3>
+          <ul class="muted">
+            <li>18+ successful Upwork freelance projects</li>
+            <li>Automation frameworks (Playwright / Selenium)</li>
+            <li>Enterprise & SaaS QA leadership</li>
+            <li>Accessibility & cross-browser testing</li>
           </ul>
         </div>
       </aside>
     </div>
 
-    <footer>© 2025 Rommelie Larin — Senior QA Engineer</footer>
-  </div>
+    <footer>
+      © 2025 Rommelie Larin — Senior QA Engineer · Upwork Freelancer (18 Projects Completed)
+    </footer>
 
-  <!-- Modal -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-close" id="modalClose" title="Close">&times;</div>
-    <img id="modalImg" class="modal-img" alt="Certification image">
-    <div id="modalCaption" class="modal-caption"></div>
   </div>
 
   <script>
-    // Dynamic experience calculation (from July 2017 to today)
-    function updateExperience() {
-      const startDate = new Date(2017, 6, 1); // July 2017 (month index 6)
-      const now = new Date();
-
-      let years = now.getFullYear() - startDate.getFullYear();
-      let months = now.getMonth() - startDate.getMonth();
-
-      if (months < 0) { years--; months += 12; }
-
-      const yearsText = years === 1 ? '1 Year' : `${years} Years`;
-      const monthsText = months === 1 ? '1 Month' : `${months} Months`;
-      const experienceString = `${yearsText} & ${monthsText} Experience`;
-
-      const summaryText = `${yearsText} ${monthsText}`;
-
-      const elYears = document.getElementById('experienceYears');
-      const elRange = document.getElementById('experienceRange');
-      const elSummary = document.getElementById('experienceSummary');
-
-      if (elYears) elYears.textContent = experienceString;
-      if (elRange) elRange.textContent = 'July 2017 – Present';
-      if (elSummary) elSummary.textContent = experienceString;
-    }
-    updateExperience();
-    // update hourly to keep accurate over time
-    setInterval(updateExperience, 1000 * 60 * 60);
-
-    // Theme toggle
-    const modeToggle = document.getElementById('modeToggle');
-    modeToggle.addEventListener('click', () => {
+    document.getElementById('modeToggle').onclick = () => {
       document.body.classList.toggle('light-mode');
-      const pressed = document.body.classList.contains('light-mode');
-      modeToggle.setAttribute('aria-pressed', pressed ? 'true' : 'false');
-      modeToggle.textContent = pressed ? 'Light Mode' : 'Dark Mode';
-    });
-    // initial text
-    modeToggle.textContent = 'Dark Mode';
-
-    // Intersection observer reveals
-    const reveals = document.querySelectorAll('[data-reveal]');
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('revealed'); obs.unobserve(entry.target); }
-      });
-    }, {threshold: 0.12});
-    reveals.forEach(r => io.observe(r));
-
-    // Avatar micro interaction
-    const avatarCard = document.getElementById('avatarCard');
-    if (avatarCard) {
-      avatarCard.addEventListener('mousemove', (e) => {
-        const r = avatarCard.getBoundingClientRect();
-        const x = (e.clientX - r.left) - r.width / 2;
-        const y = (e.clientY - r.top) - r.height / 2;
-        avatarCard.style.transform = `perspective(800px) rotateY(${x/20}deg) rotateX(${-y/20}deg)`;
-      });
-      avatarCard.addEventListener('mouseleave', () => avatarCard.style.transform = 'none');
-    }
-
-    // Certification modal
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const modalCaption = document.getElementById('modalCaption');
-    const modalClose = document.getElementById('modalClose');
-
-    document.querySelectorAll('.cert-thumb').forEach(thumb => {
-      const handler = () => {
-        const img = thumb.querySelector('img');
-        modalImg.src = img.src;
-        modalCaption.textContent = thumb.getAttribute('data-caption') || img.alt || '';
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-        modalClose.focus();
-      };
-      thumb.addEventListener('click', handler);
-      thumb.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); }});
-    });
-
-    function closeModal() {
-      modal.classList.remove('show');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
-    }
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-    // Make project tiles keyboard-activatable
-    document.querySelectorAll('.project').forEach(p => {
-      p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }});
-    });
-
-    // Stagger reveal on load
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.card').forEach((c, idx) => setTimeout(() => c.classList.add('revealed'), idx*120));
-    });
+    };
   </script>
+
 </body>
+
 </html>
